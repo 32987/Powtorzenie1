@@ -38,6 +38,9 @@ bułka tarta
 			
 			touch Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
 			(head -$2 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt && tail -$3 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt) > Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
+
+			data=`date +%d-%m-%Y`			
+			tar -cvzf Powtorzenie_${data}_32987.tar.gz ../Powtorzenie
 		else
 			echo "Pierwszy parametr powinien miec wartosc 2022 lub 2023."
 		fi
