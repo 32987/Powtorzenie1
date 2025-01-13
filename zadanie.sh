@@ -25,6 +25,9 @@ else
 bułka tarta
 1 kg cukru
 1 l barszczu w kartonie" > Pozostale/Przepisy/Lista\ zakupow\ $1.txt
+
+		mv Pozostale/Przepisy/Lista\ zakupow\ 2022.txt Pozostale/Listy\ zakupow/Swieta\ 2022
+		mv Pozostale/Przepisy/Lista\ zakupow\ 2023.txt Pozostale/Listy\ zakupow/Swieta\ 2023
 	else
 		echo "Pierwszy parametr powinien miec wartosc 2022 lub 2023."
 	fi
