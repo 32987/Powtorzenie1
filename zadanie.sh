@@ -31,6 +31,9 @@ bułka tarta
 		
 		touch Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
 		egrep "^[0-9]+ kg" Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt > Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
+		
+		touch Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
+		(head -$2 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt && tail -$3 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt) > Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
 	else
 		echo "Pierwszy parametr powinien miec wartosc 2022 lub 2023."
 	fi
