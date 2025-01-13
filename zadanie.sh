@@ -1,19 +1,23 @@
 #!/bin/bash
 
+nregex="^[+-]?[0-9]+$"
+
 if [ $# != 3 ]
 then
 	echo "Nalezy podac 3 parametry."
 else
-	mkdir {Kartki\ Swiateczne,Pozostale,Prace\ domowe,Zadania}
-	mkdir Kartki\ Swiateczne/{Kotki,Pieski}
-	mkdir Pozostale/{Listy\ zakupow,Przepisy}
-	mkdir Pozostale/Listy\ zakupow/{Swieta\ 2022,Swieta\ 2023}
-	
-	touch Pozostale/Przepisy/{Lista\ zakupow\ 2022.txt,Lista\ zakupow\ 2023.txt}
-	
-	if [ $1 == 2022 ] || [ $1 == 2023 ]
+	if [[ $1 =~ $nregex ]] && [[ $2 =~ $nregex ]] && [[ $3 =~ $nregex ]]
 	then
-		echo "świeża mięta
+		mkdir {Kartki\ Swiateczne,Pozostale,Prace\ domowe,Zadania}
+		mkdir Kartki\ Swiateczne/{Kotki,Pieski}
+		mkdir Pozostale/{Listy\ zakupow,Przepisy}
+		mkdir Pozostale/Listy\ zakupow/{Swieta\ 2022,Swieta\ 2023}
+		
+		touch Pozostale/Przepisy/{Lista\ zakupow\ 2022.txt,Lista\ zakupow\ 2023.txt}
+		
+		if [ $1 == 2022 ] || [ $1 == 2023 ]
+		then
+			echo "świeża mięta
 1 kg jabłek
 1 kg cytryn
 500 g kiszonej kapusty
@@ -26,17 +30,19 @@ bułka tarta
 1 kg cukru
 1 l barszczu w kartonie" > Pozostale/Przepisy/Lista\ zakupow\ $1.txt
 
-		mv Pozostale/Przepisy/Lista\ zakupow\ 2022.txt Pozostale/Listy\ zakupow/Swieta\ 2022
-		mv Pozostale/Przepisy/Lista\ zakupow\ 2023.txt Pozostale/Listy\ zakupow/Swieta\ 2023
-		
-		touch Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
-		egrep "^[0-9]+ kg" Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt > Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
-		
-		touch Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
-		(head -$2 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt && tail -$3 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt) > Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
+			mv Pozostale/Przepisy/Lista\ zakupow\ 2022.txt Pozostale/Listy\ zakupow/Swieta\ 2022
+			mv Pozostale/Przepisy/Lista\ zakupow\ 2023.txt Pozostale/Listy\ zakupow/Swieta\ 2023
+			
+			touch Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
+			egrep "^[0-9]+ kg" Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt > Pozostale/Listy\ zakupow/Ciezkie\ zakupy.txt
+			
+			touch Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
+			(head -$2 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt && tail -$3 Pozostale/Listy\ zakupow/Swieta\ $1/Lista\ zakupow\ $1.txt) > Pozostale/Listy\ zakupow/Wybrane\ zakupy.txt
+		else
+			echo "Pierwszy parametr powinien miec wartosc 2022 lub 2023."
+		fi
 	else
-		echo "Pierwszy parametr powinien miec wartosc 2022 lub 2023."
+		echo "Parametry powinny byc numeryczne."
 	fi
-		
 fi
 
