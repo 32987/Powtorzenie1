@@ -1,0 +1,47 @@
+commit 129a39fca18a6cdf9bf675151fe1e35aeb22f716
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 14:26:13 2025 -0500
+
+    dodano pakowanie struktury katalogow.
+
+commit b10f968f07e28e178d4be5367ca9625b18475bfd
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 14:19:09 2025 -0500
+
+    dodano sprawdzanie, czy parametry sa numeryczne
+
+commit f1f2db140763beaf280a8baf436e1515488ad846
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 14:09:03 2025 -0500
+
+    2. i 3. parametr sa wykorzystane w poleceniach head i tail, a wyniki sa zapisywane do pliku Wybrane zakupy.txt
+
+commit b36f0c93aea88a3867c750dc8483251a02ad13b4
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 13:42:32 2025 -0500
+
+    dodac do skryptu zapisywanie wyniku polecenia egrep do pliku Ciezkie zakupy.txt
+
+commit 2ad512b1866891cf5c792c71d8b510067c7e98af
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 13:32:42 2025 -0500
+
+    dodac do skryptu przenoszenie list zakupow do poszczegolnych folderow
+
+commit 46b74fedcd20e68c198771ac832f70054231b33f
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 13:28:10 2025 -0500
+
+    dodac do skryptu tworzenie dwoch plikow tekstowych i wypelnianie ich danymi w zaleznosci od 1. parametru.
+
+commit c36fcb7a565a695d84f5f7c4da5718534ce34c43
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 13:18:04 2025 -0500
+
+    stworzyc skrypt przyjmujacy 3 parametry i odwzorowujacy strukture katalogow
+
+commit 5f05bb847e8ef043b396991bf65ba27fb0e20393
+Author: Aleksy Greiveldinger <s32987@pjwstk.edu.pl>
+Date:   Mon Jan 13 13:10:14 2025 -0500
+
+    initial commit
